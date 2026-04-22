@@ -1,23 +1,28 @@
-MB AND NS 03 March 2026
-Accession: Series GSE97367
-Title: Convergent origination of a Drosophila-like dosage compensation mechanism in a reptile lineage (Gene expression profiling in several tetrapod species, bulk tissue RNA-seq)
-###########################
+# SERIES GSE97367
+#### https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97367
+**Title:** Convergent origination of a Drosophila-like dosage compensation mechanism in a reptile lineage (Gene expression profiling in several tetrapod species, bulk tissue RNA-seq)
+
+**Species:** Anolis carolinensis, Mus musculus, Monodelphis domestica, Ornithorhynchus anatinus, Gallus gallus, Xenopus tropicalis
+
 ## To get files from GEO ##
-###########################
 1) Go to webpage for the GEO series (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97367)
 2) Click on 'SRA Run Selector' (bottom of page)
     Number of ovaries: 12 (3 Anolis carolinensis, 2 Mus musculus, 1 Monodelphis domestica, 2 Ornithorhynchus anatinus, 2 Gallus gallus, 2 Xenopus tropicalis)
     Number of testes: 13 (3 Anolis carolinensis, 2 Mus musculus, 2 Monodelphis domestica, 2 Ornithorhynchus anatinus, 2 Gallus gallus, 2 Xenopus tropicalis)
     Number of liver: 33 (13 Anolis carolinensis, 4 Mus musculus, 4 Monodelphis domestica, 4 Ornithorhynchus anatinus, 4 Gallus gallus, 4 Xenopus tropicalis)
-3) Download the 'Accession List' txt file - save in OneDrive (/Users/sheffermannm/Desktop/VGP_Accession/GSE97367/SRR_Acc_List.txt) #### edit this line once we figure out how to save to OneDrive
-4) Convert this list to be space-delimited (/Users/sheffermannm/Desktop/VGP_Accession/GSE97367/SRR_Acc_List_spaceDelimited.txt) #### edit this line once we figure out how to save to OneDrive
+3) Download the 'Accession List' txt file (/Users/sheffermannm/Desktop/VGP_Accession/GSE97367/SRR_Acc_List.txt) 
+4) Convert this list to be space-delimited (/Users/sheffermannm/Desktop/VGP_Accession/GSE97367/SRR_Acc_List_spaceDelimited.txt)
+```
+#!/bin/bash
 tr '\n' ' ' < GSE97367_SRR_Acc_List.txt > GSE97367_SRR_Acc_List.spaceDelimited.txt
-################################
-## Load the data onto Biowulf ##
-################################
-!!NOTE: Table with species, SRR, tissue, and project info can be found at /data/Wilson_Lab/data/VGP_geneExpression/SRA_metadataCSVs/GSE97367.csv
+```
 
-/data/Wilson_Lab/data/VGP_geneExpression/GSE97367
+## Load the data onto Biowulf ##
+*!!NOTE:* Table with species, SRR, tissue, and project info can be found at /data/Wilson_Lab/data/VGP_geneExpression/SRA_metadataCSVs/GSE97367.csv
+
+```
+cd /data/Wilson_Lab/data/VGP_geneExpression/GSE97367
+```
 * Upload spaceDelimited list to this directory
 5) Fetch data using fasterq-dump to get fastq files:
 Run shell script in /data/Wilson_Lab/data/VGP_geneExpression/GSE97367
